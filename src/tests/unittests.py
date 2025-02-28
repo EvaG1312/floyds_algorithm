@@ -4,15 +4,15 @@ import sys
 # Ensure modules are found
 sys.path.append('../')  
 
-# Import both versions 
 import recursion.recursive_floyd as rf
 import iterative.iterative_floyd as itf
 
 class TestFloydsAlgorithm(unittest.TestCase):
     def setUp(self):
         """
-        This method runs before each test.
-        define a small known graph with known shortest-paths.
+        to run before each test
+    
+        define a small known graph 
         """
         self.NO_PATH = sys.maxsize
         
@@ -39,13 +39,13 @@ class TestFloydsAlgorithm(unittest.TestCase):
 
     def test_iterative_small_graph(self):
         """
-        Overwrites the global GRAPH in iterative_floyd used for performance test
+        Overwrites the global GRAPH used for performance test
         runs algorithm and checks the final distances.
         """
         itf.GRAPH = [row[:] for row in self.small_graph]  #copy to avoid mutation issues
         itf.MAX_LENGTH = len(itf.GRAPH[0])
 
-        itf.iterative_floyd()  #iterative version
+        itf.iterative_floyd()  
 
         self.assertEqual(itf.GRAPH, self.expected_small_graph,
                          "Iterative final distances do not match expected results.")
