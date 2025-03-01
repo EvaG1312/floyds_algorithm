@@ -17,7 +17,7 @@ cd floyds_algorithm
 python -m venv .venv
 source .venv/bin/activate  # macOS/Linux
 
-.venv\Scripts\activate     # Windows
+    .venv\Scripts\activate     # Windows
 
 
 ### Running the scripts ###
@@ -29,6 +29,10 @@ To execute the iterative version of Floyd's Algorithm: python src/iterative/iter
 To compare the execution time of both implementations: python src/tests/performance_test.py
 This will output execution times for 1000 iterations of each version
 
+### Running Unittest ###
+To verify both the iterative and recursive versions of the algorithm, we use Python’s built-in unittest framework:
+python -m unittest src/tests/unittests.py
+
 ### Requirements ### 
 Python 3.8+
 
@@ -36,10 +40,11 @@ no dependencies
 
 ### Additional Notes ### 
 The tested graph is randomly generated, so results may vary slightly each run; size is kept consistent (30) to get meaningful results 
+
 The recursive version has a high recursion limit to prevent stack overflow 
 
 Author: Eva Grieving (EvaG1312)
-Last updated: 28/02/2025
+Last updated: 01/03/2025
 
 
 
